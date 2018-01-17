@@ -8,10 +8,12 @@ function run_command()
     eval "$1"
 }
 
-run_command "addgroup -g $MCGID minecraft"
-run_command "adduser -h /srv/minecraft -S -u $MCUID -G minecraft minecraft"
-
 set +e
+if ! run_command "id minecraft"; then
+  run_command "addgroup -g $MCGID minecraft"
+  run_command "adduser -h /srv/minecraft -S -u $MCUID -G minecraft minecraft"
+fi
+
 run_command "cp -R /srv/minecraft/config.override/* /srv/minecraft/config/"
 run_command "cp -R /srv/minecraft/mods.override/* /srv/minecraft/mods/"
 set -e
