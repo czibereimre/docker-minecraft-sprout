@@ -24,10 +24,11 @@ RUN mkdir -p /srv/minecraft && \
     cd /srv/minecraft/ && \
     apk del --purge git gcc musl-dev ca-certificates wget python
 
-ADD start_mc.sh /usr/bin/start_mc
-RUN chmod +x /usr/bin/start_mc
+RUN rm /srv/minecraft/mods/animania-1.10.2-1.3.3.jar
 
 ADD server.properties /srv/minecraft/server.properties
+ADD start_mc.sh /usr/bin/start_mc
+RUN chmod +x /usr/bin/start_mc
 
 VOLUME /srv/minecraft/world
 VOLUME /srv/minecraft/config.override
