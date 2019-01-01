@@ -35,6 +35,6 @@ if sys.argv[1] == 'skyfactory3':
     download_file(url, destfile)
     unzip_file(destfile)
 if sys.argv[1] == 'sprout':
-    url = 'https://addons-origin.cursecdn.com/files/2488/578/Sprout%200.10.0%20Server.zip'
+    url = 'https://media.forgecdn.net/files/2606/931/Sprout+0.11.0+Server.zip'
     download_file(url, destfile)
     unzip_file(destfile)

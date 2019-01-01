@@ -1,1 +1,1 @@
-# docker-minecraft-sprout
+# docker-minecraft-sprout v0.11

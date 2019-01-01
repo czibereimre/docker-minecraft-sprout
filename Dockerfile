@@ -1,7 +1,7 @@
 FROM anapsix/alpine-java:8_server-jre
 MAINTAINER Alan Jenkins <alan.james.jenkins@gmail.com>
 
-ENV MCMEM=4000
+ENV MCMEM=4G
 ENV MCCPU=4
 ENV MCUID=995
 ENV MCGID=994
@@ -25,7 +25,11 @@ RUN mkdir -p /srv/minecraft && \
     cd /srv/minecraft/ && \
     apk del --purge git gcc musl-dev ca-certificates wget python
 
-RUN rm /srv/minecraft/mods/animania-1.10.2-1.3.3.jar
+RUN rm /srv/minecraft/mods/SoundFilters-0.9_for_1.9.4.jar
+RUN mv /srv/minecraft/config/ExtraUtils2.cfg /srv/minecraft/config/extrautils2.cfg
+RUN mv /srv/minecraft/config/Login_Shield.cfg /srv/minecraft/config/login_shield.cfg
+RUN mv /srv/minecraft/config/SGExtraParts.cfg /srv/minecraft/config/sgextraparts.cfg
+RUN mv /srv/minecraft/config/SuperMultiDrills.cfg /srv/minecraft/config/supermultidrills.cfg
 
 ADD server.properties /srv/minecraft/server.properties
 ADD start_mc.sh /usr/bin/start_mc
