@@ -1,0 +1,21 @@
+version: '3'
+services:
+  sprout_v0.10:
+    build:
+      context: .
+    ports:
+      - "25565:25565"
+    volumes:
+      - world:/srv/minecraft/world
+      - config.override:/srv/minecraft/config.override
+      - mods.override:/srv/minecraft/mods.override
+      - crash-reports:/srv/minecraft/crash-reports
+      - backups:/srv/minecraft/backups
+
+volumes:
+  world:
+  config.override:
+  mods.override:
+  crash-reports:
+  backups:
+
