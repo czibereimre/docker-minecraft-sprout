@@ -2,6 +2,7 @@ FROM anapsix/alpine-java:8_server-jre
 MAINTAINER Alan Jenkins <alan.james.jenkins@gmail.com>
 
 ENV MCMEM=4000
+ENV MCCPU=4
 ENV MCUID=995
 ENV MCGID=994
 
