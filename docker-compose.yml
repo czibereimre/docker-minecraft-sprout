@@ -1,6 +1,6 @@
 version: '3'
 services:
-  sprout_v0.11:
+  server_v0.11:
     build:
       context: .
     ports:
