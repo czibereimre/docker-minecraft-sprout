@@ -11,6 +11,7 @@ services:
       - mods.override:/srv/minecraft/mods.override
       - crash-reports:/srv/minecraft/crash-reports
       - backups:/srv/minecraft/backups
+    restart: always
 
 volumes:
   world:
