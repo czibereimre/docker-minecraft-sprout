@@ -6,7 +6,7 @@ ENV MCCPU=4
 ENV MCUID=995
 ENV MCGID=994
 
-RUN apk --no-cache add gcc python git musl-dev ca-certificates wget && \
+RUN apk --no-cache add gcc python git musl-dev ca-certificates wget sed && \
     update-ca-certificates && \
     cd /tmp/ && \
     git clone https://github.com/Tiiffi/mcrcon.git && \
@@ -32,12 +32,11 @@ RUN mv /srv/minecraft/config/SGExtraParts.cfg /srv/minecraft/config/sgextraparts
 RUN mv /srv/minecraft/config/SuperMultiDrills.cfg /srv/minecraft/config/supermultidrills.cfg
 
 
-RUN sed -i 's/Remove\ vanilla\ Chickens\"\=true/Remove\ vanilla\ Chickens\"\=false/' /srv/minecraft/config/minecolonies.cfg
-RUN sed -i 's/Remove\ vanilla\ Cows\"\=true/Remove\ vanilla\ Cows\"\=false/' /srv/minecraft/config/minecolonies.cfg
-RUN sed -i 's/Remove\ vanilla\ Pigs\"\=true/Remove\ vanilla\ Pigs\"\=false/' /srv/minecraft/config/minecolonies.cfg
-RUN sed -i 's/Remove\ vanilla\ Rabbits\"\=true/Remove\ vanilla\ Rabbits\"\=false/' /srv/minecraft/config/minecolonies.cfg
-RUN sed -i 's/Remove\ vanilla\ Sheep\"\=true/Remove\ vanilla\ Sheep\"\=false/' /srv/minecraft/config/minecolonies.cfg
-
+RUN sed -i 's/Remove\ vanilla\ Chickens\"\=true/Remove\ vanilla\ Chickens\"\=false/' /srv/minecraft/config/animania.cfg
+RUN sed -i 's/Remove\ vanilla\ Cows\"\=true/Remove\ vanilla\ Cows\"\=false/' /srv/minecraft/config/animania.cfg
+RUN sed -i 's/Remove\ vanilla\ Pigs\"\=true/Remove\ vanilla\ Pigs\"\=false/' /srv/minecraft/config/animania.cfg
+RUN sed -i 's/Remove\ vanilla\ Rabbits\"\=true/Remove\ vanilla\ Rabbits\"\=false/' /srv/minecraft/config/animania.cfg
+RUN sed -i 's/Remove\ vanilla\ Sheep\"\=true/Remove\ vanilla\ Sheep\"\=false/' /srv/minecraft/config/animania.cfg
 
 ADD ops.json /srv/minecraft/ops.json
 ADD server.properties /srv/minecraft/server.properties
