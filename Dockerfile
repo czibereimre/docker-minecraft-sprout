@@ -26,6 +26,10 @@ RUN mkdir -p /srv/minecraft && \
     apk del --purge git gcc musl-dev ca-certificates wget python
 
 RUN rm /srv/minecraft/mods/SoundFilters-0.9_for_1.9.4.jar
+
+RUN rm /srv/minecraft/mods/minecolonies-universal-1.10.2-0.9.7587.jar
+ADD minecolonies-universal-1.10.2-0.8.4908.jar /srv/minecraft/mods/minecolonies-universal-1.10.2-0.8.4908.jar
+
 RUN mv /srv/minecraft/config/ExtraUtils2.cfg /srv/minecraft/config/extrautils2.cfg
 RUN mv /srv/minecraft/config/Login_Shield.cfg /srv/minecraft/config/login_shield.cfg
 RUN mv /srv/minecraft/config/SGExtraParts.cfg /srv/minecraft/config/sgextraparts.cfg
